@@ -1,0 +1,26 @@
+--Create a athletic clothing store database
+/**Workout_Clothes
+Sports Bras (3) red
+Leggings (5)
+Shorts (5)
+Hoodies (3)
+Cropped Tops (2)
+**/
+
+CREATE TABLE Workout_Clothes (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, price INTEGER);
+
+INSERT INTO workout_clothes VALUES (1, "Sports Bras", 5, "red", 25);
+INSERT INTO workout_clothes VALUES (2, "Leggings", 5, "black", 65);
+INSERT INTO workout_clothes VALUES (3, "Shorts", 5, "blue", 45);
+INSERT INTO workout_clothes VALUES (4, "Hoodies", 3, "yellow", 55);
+INSERT INTO workout_clothes Values (5, "Cropped Tops", 2, "white", 35);
+SELECT * FROM Workout_Clothes;
+
+--display the database order by price 
+SELECT * FROM Workout_Clothes ORDER by price desc;
+
+--display items in database that cost more than $50
+SELECT * FROM Workout_Clothes where price>50;
+
+--display sum of items in database
+SELECT SUM(quantity) From Workout_Clothes;
