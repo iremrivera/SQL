@@ -1,0 +1,63 @@
+/* Create table about the people and what they do here */
+
+/* Create TABLE with Actors that play key Marvel characters */
+CREATE TABLE Avengers (id INTEGER PRIMARY KEY AUTOINCREMENT,actor_name TEXT,avenger_name TEXT);
+
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Robert Downey Jr.", "Iron Man");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Chris Evans", "Captain America");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Chris Hemsworth", "Thor");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Tom Holland", "Spider-Man");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Mark Ruffalo", "Hulk");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Scarlett Johansson", "Black Widow");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Jeremy Renner", "Hawkeye");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Don Cheadle", "War Machine");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Sebastian Stan", "The Winter Soilder");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Anthony Mackie", "The Falcon");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Elizabeth Olsen", "Scarlet Witch");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Paul Rudd", "Ant-Man");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Brie Larson", "Captain Marvel");
+INSERT INTO avengers(actor_name, avenger_name) VALUES("Josh Brolin", "Thanos");
+
+SELECT * FROM Avengers;
+
+/* Create TABLE with the four Avenger Movies and the main actors*/
+CREATE TABLE Avengers_movies(id INTEGER PRIMARY KEY AUTOINCREMENT, movie_name TEXT, actor1 INTEGER,actor2 INTEGER, actor3 INTEGER, actor4 INTEGER, actor5 INTEGER, actor6 INTEGER, actor7 INTEGER, actor8 INTEGER, actor9 INTEGER, actor10 INTEGER, actor11 INTEGER, actor12 INTEGER);
+
+INSERT INTO Avengers_movies VALUES(1, 'The Avengers', 1, 2, 6, 7, 14, null, null, null, null, null, null, null);
+INSERT INTO Avengers_movies VALUES(2, 'Avengers:Age of Ultron', 1, 2, 3, 5, 6, 8, 10, 11, 14, null, null, null);
+INSERT INTO Avengers_movies VALUES(3, 'Avengers:Infinity War',1,2,3,5,6,8,9,10,11,14,null, null);
+INSERT INTO Avengers_movies VALUES(4, 'Avengers:Endgame',1,4,5,6,7,8,9,10,11,12,13,14);
+
+/* Join Costars based on Avenger movies they acted in*/
+
+SELECT Avengers_movies.movie_name, a.actor_name, b.actor_name, c.actor_name, d.actor_name, e.actor_name, f. actor_name, g.actor_name, h.actor_name, i.actor_name, j.actor_name, k.actor_name, l.actor_name FROM Avengers_movies
+    LEFT OUTER JOIN Avengers a
+    ON Avengers_movies.actor1=a.id
+    LEFT OUTER JOIN  Avengers b 
+    ON Avengers_movies.actor2=b.id
+    LEFT OUTER JOIN  Avengers c 
+    ON Avengers_movies.actor3=c.id
+    LEFT OUTER JOIN  Avengers d
+    ON Avengers_movies.actor4=d.id
+    LEFT OUTER JOIN  Avengers e 
+    ON Avengers_movies.actor5=e.id
+    LEFT OUTER JOIN  Avengers f
+    ON Avengers_movies.actor6=f.id
+    LEFT OUTER JOIN  Avengers g 
+    ON Avengers_movies.actor7=g.id
+    LEFT OUTER JOIN  Avengers h 
+    ON Avengers_movies.actor8=h.id
+    LEFT OUTER JOIN  Avengers i 
+    ON Avengers_movies.actor9=i.id
+    LEFT OUTER JOIN  Avengers j 
+    ON Avengers_movies.actor10=j.id
+    LEFT OUTER JOIN  Avengers k 
+    ON Avengers_movies.actor11=k.id
+    LEFT OUTER JOIN  Avengers l
+    ON Avengers_movies.actor12=l.id;
+    
+
+
+    
+    
+    
